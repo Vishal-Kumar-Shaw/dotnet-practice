@@ -1,0 +1,83 @@
+#############################
+# UNIVERSAL .NET GITIGNORE #
+#############################
+
+# Build Folders (all subfolders automatically)
+bin/
+obj/
+out/
+Debug/
+Release/
+publish/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# JetBrains Rider
+.idea/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Logs
+*.log
+logs/
+
+# Environment files
+*.env
+.env*
+
+# Temp / Cache
+*.tmp
+*.temp
+*.cache
+tmp/
+temp/
+
+# Dotnet generated metadata
+*.deps.json
+*.runtimeconfig.json
+*.dll
+*.exe
+*.pdb
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+coverage.opencover.xml
+
+# Backup
+*.bak
+*~
+*_backup*
+
+# OS Specific
+.DS_Store
+Thumbs.db
+
+# Node Projects (sometimes used in same repo)
+node_modules/
+dist/
+
+# Database local files
+*.mdf
+*.ldf
+
+# Publish Profile
+Properties/PublishProfiles/
+
+# Others
+*.config.lock

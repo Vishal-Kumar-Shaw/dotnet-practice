@@ -1,0 +1,11 @@
+Q. What is object?
+Ans - Object is the instance of the class. Class is basically a blueprint and object is the real entity made with the class(blueprint)
+e.g. Car is a class but Hyundai Verna is an object of the car class
+
+Q. Why constructor is used?
+Ans. constructor is used to initialize the properties of the object when object is being created at runtime.
+
+Q. How to make multiple objects of the same class?
+Ans. By changing the name. for example -
+Class obj1 = new Class();
+Class obj2 = new Class();

@@ -1,0 +1,47 @@
+Q. What is encapsulation?
+Ans. Binding data and methods into a class is called encapsulation. Data is make private so that it cannot be changed directly by any object
+and for controlling the data i.e. getting and setting, we create getter and setter methods. This is called encapsulation
+Encapsulation = control data using methods, not direct access.
+
+Q. Why we use private field?
+Ans. For security purpose, we use private field so that data can't be changed directly
+To protect data from invalid or unauthorized changes.
+
+Q. Internal vs Protected
+Ans. Internal - same assembly
+Protected - derived classes
+
+
+✅ ASSEMBLY kya hota hai?
+
+C# me jab tum project build karte ho, to output me ek file banti hai:
+
+.dll (class library)
+
+.exe (console/app)
+
+👉 Ye hi file assembly hoti hai.
+
+Assembly = Project ka compiled output.
+
+Ek solution me 10 projects ho sakte hain → to 10 alag assemblies banengi.
+
+🧠 INTERNAL modifier means:
+
+Jo bhi classes/members internal hain, unhe sirf usi assembly ke andar access kar sakte ho.
+
+Chahe namespace alag ho — koi farq nahi padta.
+Bas wo same .dll ya same .exe me hone chahiye.
+
+✔ SIMPLE EXAMPLE
+Project 1 → StudentLibrary (output: StudentLibrary.dll)
+internal class Student
+{
+    internal void Print() { }
+}
+
+Project 2 → SchoolApp (output: SchoolApp.exe)
+
+Agar tum Project 2 me Student class ka object banane ki koshish karoge → ERROR
+
+👉 Kyunki internal ka scope apni assembly (StudentLibrary.dll) tak limited hai.
