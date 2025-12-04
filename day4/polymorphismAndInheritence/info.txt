@@ -6,3 +6,88 @@
 2. new keyword creates a memory in heap and let the object name target to that but override 
 implement the method in child class
 3. Base keyword is used when we need to use parent class version
+
+
+✅ 1️⃣ virtual keyword ka EXACT purpose
+✔ Tumhara answer (correct direction):
+
+allow child classes to override the method
+
+⭐ PERFECT PROFESSIONAL ANSWER (interview level):
+
+virtual keyword parent class me method ko override-able banata hai.
+Ye compiler ko batata hai:
+
+“Is method ka behavior child classes change kar sakti hain.”
+
+Without virtual, override possible hi nahi hai.
+
+
+⭐ Correct Interview Answer: override vs new
+✔ override keyword
+
+Override parent ke virtual method ko modify karta hai.
+
+Runtime polymorphism enable karta hai.
+
+Call object ke type se decide hota hai.
+
+public override void Speak() { }
+
+✔ new keyword (in inheritance)
+
+Parent method ko hide karta hai, override nahi karta.
+
+Runtime polymorphism nahi hota.
+
+Call reference type ke hisaab se hota hai, object type ke hisaab se nahi.
+
+public new void Speak() { }
+
+🧠 Short Example
+class A
+{
+    public void Show() { Console.WriteLine("A"); }
+}
+
+class B : A
+{
+    public new void Show() { Console.WriteLine("B"); }
+}
+
+A obj = new B();
+obj.Show();  // Output: A (because new hides, does not override)
+
+
+👉 override ka output child ka hota hai
+👉 new ka output parent ka hi hota hai (runtime polymorphism nahi hota)
+
+⭐ SUPER SHORT SUMMARY
+Keyword	Meaning
+override	parent ke virtual method ko modify karta hai (runtime polymorphism)
+new	parent method ko hide karta hai (no polymorphism)
+
+
+✅ 3️⃣ base keyword kab use hota hai?
+✔ Tumhara answer (correct line):
+
+Base keyword is used when we need to use parent class version
+
+⭐ Professional-level explanation:
+
+base keyword parent class ke constructor, method, ya property ko call karne ke liye use hota hai.
+
+Use cases:
+
+➤ 1. Parent constructor call karna
+public Dog() : base("Animal") {}
+
+➤ 2. Parent method ka version call karna
+public override void Speak()
+{
+    base.Speak(); // parent method
+    Console.WriteLine("Dog barks");
+}
+
+➤ 3. Parent property access karna
+base.SomeProperty
