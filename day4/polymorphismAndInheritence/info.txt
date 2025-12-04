@@ -1,0 +1,8 @@
+1️⃣ virtual keyword ka exact purpose?
+2️⃣ override vs new keyword difference?
+3️⃣ base keyword kab use hota hai?
+
+1. Exact purpose of virtual keyword is to allow child classes to override the method.
+2. new keyword creates a memory in heap and let the object name target to that but override 
+implement the method in child class
+3. Base keyword is used when we need to use parent class version

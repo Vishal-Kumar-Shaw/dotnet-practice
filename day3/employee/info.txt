@@ -1,0 +1,38 @@
+1️⃣ Field vs Property difference?
+2️⃣ Auto-property kya hota hai?
+3️⃣ this keyword ka real use kab aata hai?
+
+1. Field means only variables of the class like name, age
+property means values along with getter and setter in which we use shortcut like public int age {get; set;}, it replaces
+getter and setter method actual implementation
+2. Auto-property means when we dont need any validation
+3. This real use comes when parameter name and property name is same, this is used to signify object. e.g this.age = age;
+
+
+⭐ Perfect Answer (Polished Version)
+
+Field = raw data variable inside class
+Property = data + controlled access (getter/setter logic)
+
+Property → encapsulation enforce karti hai.
+Field → direct memory storage hota hai.
+
+
+⭐ Perfect Answer (Polished)
+
+Auto-property =
+C# automatically creates a private hidden field for you.
+
+
+⭐ Perfect Answer (Polished)
+
+this keyword refers to the current object instance.
+Use hota hai jab:
+
+parameter name = field/property name
+
+current instance ke member ko refer karna ho
+
+constructor chaining
+
+extension methods me ambiguity solve karne me
