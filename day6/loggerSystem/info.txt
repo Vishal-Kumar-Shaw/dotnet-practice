@@ -5,3 +5,125 @@ To lock today's learning:
 1️⃣ Interface me default method introduce kyu kiya C# ne?
 2️⃣ Explicit interface implementation kab use hota hai?
 3️⃣ Multiple interfaces real-life example?
+
+1. Interface has a default rule because if there is any class which doesnt require specific method implementation so that
+it can throw default implementation or error, or child is not forced to implement that
+
+2. I dont know exactly
+
+3. BankPayment implements ICounterCashPayment, IOnlinePayment 
+
+
+
+
+✅ 1️⃣ Interface me default method introduce kyu kiya C# ne?
+✔ Tumhara answer:
+
+Child class not forced to implement that
+
+Bilkul sahi direction — but thoda professional explain karte hain 👇
+
+⭐ PERFECT INTERVIEW ANSWER
+
+C# developers old code break nahi karna chahte the.
+C# 8 se pehle agar interface me new method add karte:
+
+➡️ Saare classes ko us method ka implementation dena padta
+➡️ Nahi to code compile hi nahi hota
+
+Huge breaking change for large projects.
+
+Isliye:
+
+👉 Interface me default implementation introduce kiya
+taaki:
+
+Existing classes break na ho
+
+Interface evolve ho sake
+
+Child class optional override kar sake
+
+Default methods = backward compatibility + flexibility
+
+✅ 2️⃣ Explicit interface implementation kab use hota hai?
+
+Tumne bola:
+
+I don’t know exactly
+
+BHAU — ye sabse important point aata hai interview me.
+Chalo simple se samjhte hain:
+
+⭐ PERFECT INTERVIEW ANSWER
+
+Explicit interface implementation tab use hota hai jab:
+
+✔ 1. Two interfaces me same method name ho
+
+Example:
+
+interface IA { void Print(); }
+interface IB { void Print(); }
+
+
+Agar dono ko implement karna ho:
+
+class Demo : IA, IB
+{
+    void IA.Print() { Console.WriteLine("IA Print"); }
+    void IB.Print() { Console.WriteLine("IB Print"); }
+}
+
+
+Yeh ambiguity solve karta hai.
+
+✔ 2. Method ko public nahi karna chahte
+
+Explicit methods public nahi hote unless interface through call kare.
+
+Example:
+
+ILogger logger = new MyLogger();
+logger.Log(); // Works
+MyLogger obj = new MyLogger();
+obj.Log(); // ❌ Not allowed
+
+
+Yani method hide ho jaata hai.
+
+⭐ SUPER SIMPLE 1-LINE SUMMARY
+
+Explicit interface implementation =
+Jab tum do same-name methods ko handle karna chaho,
+ya method ko class ke bahar expose nahi karna chaho.
+
+✅ 3️⃣ Multiple interfaces real-life example?
+
+Tumhara answer:
+
+BankPayment implements ICounterCashPayment, IOnlinePayment
+
+BILKUL PERFECT 🔥🔥🔥
+Professional level answer.
+
+Chalo isko interview-ready banate hain:
+
+⭐ PROFESSIONAL ANSWER:
+
+A BankPayment class can implement multiple payment rules.
+
+class BankPayment : ICounterCashPayment, IOnlinePayment
+{
+    public void CashPay() { ... }
+    public void OnlinePay() { ... }
+}
+
+
+Real life me:
+
+Car → IEngine + IWheel + IMusicSystem
+
+Phone → ICamera + IGPS + IBluetooth
+
+Employee → IWork + ILeave + IBonus
