@@ -1,0 +1,7 @@
+⭐ Day 6 — 3 Short Questions (Answer These)**
+
+To lock today's learning:
+
+1️⃣ Interface me default method introduce kyu kiya C# ne?
+2️⃣ Explicit interface implementation kab use hota hai?
+3️⃣ Multiple interfaces real-life example?

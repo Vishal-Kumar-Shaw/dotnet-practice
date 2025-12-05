@@ -1,0 +1,97 @@
+⭐ DAY 5 SHORT QUESTIONS
+
+1️⃣ Abstract class me constructor kyun hota hai?
+2️⃣ Interface me fields kyun allowed nahi?
+3️⃣ Interface multiple inheritance kyu allow karta?
+
+Abstract classes have constructor because abstract class's object is not made, it is for inheriting by the child class, so when
+a chile class inherits abstract class - then to initialize the fieds defined in the parent constructor, we need constructor and use base(prop1, prop2) like this
+
+Interface is only for rules, no implementation - it has no fields because it doesn't need it, if any method uses any property
+then that is declared and defined in the child class only
+
+Interface allows multiple inheritance because it allows only rules so that one class implement rules from multiple interfaces
+and if there is common rule then it can also use by putting interface1.method() like that
+
+
+
+✅ 1️⃣ Abstract class me constructor kyun hota hai?
+✔ Tumhara logic:
+
+Bilkul sahi — abstract class ka constructor child ke initialization ke liye hota hai.
+
+⭐ PERFECT INTERVIEW ANSWER:
+
+Abstract class me constructor isliye hota hai kyunki
+jab child class inherit karti hai, tab parent ke fields/properties ko initialize karna zaroori hota hai.
+
+Abstract class ka object nahi banta,
+par child object banne par parent constructor pehle call hota hai:
+
+public Dog() : base("Animal") { }
+
+
+Iska purpose:
+✔ common initialization
+✔ base fields set karna
+✔ code duplication avoid karna
+
+
+✅ 2️⃣ Interface me fields kyun allowed nahi?
+✔ Tumhara logic: good
+
+Interface = only rules, no implementation.
+
+⭐ PERFECT INTERVIEW ANSWER:
+
+Interface ek pure contract hota hai.
+Uska kaam sirf yeh batana hai ki:
+
+"Class ko kaunse methods implement karne hain."
+
+Interface:
+
+❌ object nahi bana sakta
+❌ koi state store nahi kar sakta
+❌ koi field hold nahi kar sakta
+
+Isliye:
+
+No instance fields
+
+No constructors
+
+No memory for data
+
+Interface = 100% behavior, 0% data
+
+
+
+✅ 3️⃣ Interface multiple inheritance kyu allow karta hai?
+✔ Tumhara idea: good
+
+Rules multiple jagah se aa sakte hain.
+
+⭐ PERFECT INTERVIEW ANSWER:
+
+Classes me multiple inheritance dangerous hota hai
+(diamond problem, ambiguity etc.)
+
+But interface me koi implementation nahi hoti,
+sirf method signatures hote hain.
+
+Isliye:
+
+✔ No diamond problem
+✔ No conflict
+✔ No ambiguity
+
+Example:
+A class can be both:
+
+IAnimal AND IPet
+
+
+Kyuki dono me sirf rules hain.
+
+Interface multiple inheritance = safe + flexible.
