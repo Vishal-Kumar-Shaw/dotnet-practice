@@ -1,0 +1,6 @@
+⭐ PART 6 — Day 8 SHORT QUESTIONS (Answer later)
+
+1️⃣ Factory Pattern ka main purpose?
+2️⃣ Abstract Factory Pattern ka real use-case?
+3️⃣ Factory Method vs Abstract Factory difference?
+4️⃣ Open/Closed Principle kya hota?

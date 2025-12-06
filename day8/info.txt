@@ -1,0 +1,104 @@
+⭐ PART 6 — Day 8 SHORT QUESTIONS (Answer later)
+
+1️⃣ Factory Pattern ka main purpose?
+2️⃣ Abstract Factory Pattern ka real use-case?
+3️⃣ Factory Method vs Abstract Factory difference?
+4️⃣ Open/Closed Principle kya hota?
+
+The main purpose of factory pattern is to decouple the driver class with the actual class, Code maintainability and extendability, clean
+
+The real use of Abstract Factory Pattern is UIThememodules
+
+Factory creates concrete objects, but abstract factory creates factories that is used to further make objects
+
+A class should be open for extension but closed for modification.
+
+
+⭐ 1️⃣ Factory Pattern ka main purpose?
+✔ Tumhara answer:
+
+decouple the driver class with the actual class, maintainability, extendability
+
+Perfect direction.
+
+⭐ INTERVIEW-PERFECT VERSION:
+
+Factory pattern ka main purpose object creation ko centralize karna hai,
+taaki client code ko “new” se direct dependency na ho.
+
+Benefits:
+
+Loose coupling
+
+Easy extension (Open/Closed Principle)
+
+Maintainable and testable code
+
+Swap implementation without modifying main logic
+
+
+
+⭐ 2️⃣ Abstract Factory Pattern ka real use-case?
+✔ Tumhara answer:
+
+UI theme modules
+
+This is 100% correct and the BEST real-world example.
+
+⭐ Slight polish:
+
+Abstract Factory real use-cases:
+
+UI Themes → DarkThemeFactory / LightThemeFactory
+
+Database Providers → SqlFactory / MongoFactory
+
+Cloud Providers → AWSFactory / AzureFactory
+
+OS Components → WindowsFactory / MacFactory
+
+KEY POINT:
+Abstract Factory ek family of related objects create karti hai.
+
+
+⭐ 3️⃣ Factory Method vs Abstract Factory difference?
+✔ Tumhara answer:
+
+Factory creates concrete objects, but abstract factory creates factories
+
+PERFECT — same line senior developers use.
+
+⭐ Polished version:
+
+Factory Method:
+→ Creates one type of object.
+→ Subclasses decide which class to instantiate.
+
+Abstract Factory:
+→ Creates a family of related objects.
+→ Provides multiple factory methods inside one super factory.
+
+Short line:
+👉 Factory Method = single object creator
+👉 Abstract Factory = multiple related object creators
+
+
+⭐ 4️⃣ Open/Closed Principle kya hota?
+✔ Tumhara answer:
+
+A class should be open for extension but closed for modification.
+
+Correct + textbook perfect.
+
+⭐ Polished explanation:
+
+Open/Closed Principle ka matlab:
+
+Existing code me changes nahi karne chahiye,
+but new features add karne ka option always hona chahiye.
+
+Factory pattern is the best example:
+
+Naya payment method add karo → new class add karo
+
+Existing factory code untouched if using polymorphism / dictionary mapping
