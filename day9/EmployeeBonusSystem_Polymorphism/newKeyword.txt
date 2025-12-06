@@ -1,0 +1,179 @@
+BHAAAUUU 🔥🔥🔥
+**“new” keyword ka concept sabse tricky hota hai**, but aaj main isko itna simple, realistic aur deep explain kar dunga ki tum kabhi life me confuse nahi hoge.
+
+Chalo shuru karte hain **desi language + memory + compiler + runtime flow ke saath**.
+
+---
+
+# ⭐ **1️⃣ new keyword ACTUALLY kya karta hai?**
+
+**Bahut log galat samajhte hain**:
+
+> “new keyword compile time me child ka method bana deta hai”
+
+**NO, NO, NO ❌**
+Yeh bilkul galat hai.
+
+### ✔ Sahi definition:
+
+**“new” method parent method ko HIDE karta hai, override nahi.**
+Yani **child ka method tabhi chalega jab reference child type ka ho.**
+
+---
+
+# ⭐ **2️⃣ new vs override ka sabse bada difference**
+
+## 🧠 override → Runtime decision
+
+Object type decide karega kaun sa method chalega.
+
+```csharp
+Animal a = new Dog();
+a.Speak();  // Dog version (override)
+```
+
+**Because override = runtime polymorphism**
+
+---
+
+## 🧠 new → Compile-time decision
+
+REFERENCE type decide karega kaun sa method chalega.
+
+```csharp
+Animal a = new Dog();
+a.Speak();  // Animal version  ❌ Dog version nahi
+```
+
+**Because new = method hiding (not polymorphism)**
+
+---
+
+# ⭐ **3️⃣ Memory me kya hota hai?**
+
+### WITH override:
+
+Child class ka v-table parent se replace ho jata hai method ke liye.
+
+### WITH new:
+
+Child apna **alexa version** banana deta hai,
+but parent wala **amazon echo version** intact rehta hai.
+
+Both exist side-by-side:
+
+```
+Animal.Speak()    // parent version
+Dog.Speak()       // child new version
+```
+
+Compiler bolta:
+
+> “Tumne nye method se parent ko hide kar diya,
+> but runtime me main reference ki sununga.”
+
+---
+
+# ⭐ **4️⃣ Super Example — Tum khud dekh lo behavior**
+
+```csharp
+class A  
+{  
+    public void Show()  
+    {  
+        Console.WriteLine("A Show");  
+    }  
+}  
+
+class B : A  
+{  
+    public new void Show()  
+    {  
+        Console.WriteLine("B Show");  
+    }  
+}
+```
+
+### Case 1:
+
+```csharp
+A obj = new B();
+obj.Show();
+```
+
+🟡 Output:
+
+```
+A Show
+```
+
+Because reference = A
+And new = compile time method selection
+So Animal/A ka method chalta hai.
+
+---
+
+### Case 2:
+
+```csharp
+B obj = new B();
+obj.Show();
+```
+
+🟢 Output:
+
+```
+B Show
+```
+
+---
+
+# ⭐ **5️⃣ Why new is NOT polymorphism?**
+
+Polymorphism rule:
+
+> Object type decides which method runs.
+
+With new keyword:
+
+> Reference type decides, so no polymorphism.
+
+---
+
+# ⭐ **6️⃣ Most Important Interview Line**
+
+**new = method hiding, not overriding**
+**new = compile-time binding**
+**override = runtime binding**
+
+---
+
+# ⭐ **7️⃣ Tere question ka EXACT answer:**
+
+> “new matlab compile time me wo child ka method bana deta h kya?”
+
+✔ **YES child ka method compile-time insert hota hai**
+❌ **But override jaisa method table replace nahi hota**
+✔ **Parent ka version bhi alag se available rehta hai**
+✔ **Compiler reference ke hisaab se decide karta hai kaun sa call hoga**
+❌ **Runtime polymorphism apply nahi hota**
+
+---
+
+# ⭐ Final Super Simple Desi Example
+
+### override = “Papa ka rule todkar apna rule laga diya”
+
+(Class me permanent change)
+
+### new = “Papa ka rule chupa diya aur apna rule sirf apne naam ke reference pe chalwaya”
+
+(Temporary hiding)
+
+---
+
+# BHAU — AB BATAO:
+
+**new keyword clear ho gaya ya ek aur real-world example du?**
+
+Agar chahe to main ek **memory diagram** bhi bana kar dikha deta hoon.
