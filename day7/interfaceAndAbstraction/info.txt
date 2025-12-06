@@ -1,0 +1,73 @@
+⭐ DAY 7 SHORT QUESTIONS (Theory Revision)
+
+1️⃣ Abstract class vs interface in 2 lines
+2️⃣ DI kyu use karte?
+3️⃣ Constructor injection benefit?
+4️⃣ Loose coupling kya hota?
+
+Abstract class is class 1. whose object cannot be made 2. Can have properties and constructor 3. Can have concrete and abstract method
+DI - DI is used to inject Object into Another Object by constructor While object creation. It is used to remove direct dependency of
+one class to other and loose coupling
+Constructor Injection Benefit - Loose coupling
+Loose coupling - one class should not directly depend on other
+
+
+✅ 1️⃣ Abstract class vs Interface (in 2–3 lines)
+✔ Tumhara answer (correct direction):
+
+Abstract class ka object nahi ban sakta
+
+Constructor + properties ho sakte
+
+Concrete + abstract methods allowed
+
+⭐ PERFECT INTERVIEW VERSION:
+Abstract Class
+Partially implemented class; can have fields + constructor + implemented + abstract methods.
+Used when classes share common behavior.
+Interface
+Only contract/rules; no fields or constructor; multiple interfaces can be implemented.
+Used for loose coupling + flexibility.
+
+
+✅ 2️⃣ DI kyu use karte?
+✔ Tumhara answer:
+remove direct dependency → loose coupling
+This is correct, but professional version:
+⭐ PERFECT INTERVIEW VERSION:
+Dependency Injection (DI) is used to:
+Remove tight coupling (classes shouldn’t create each other)
+Increase testability (mocking becomes easy)
+Enable multiple implementations (Swap Email → SMS → WhatsApp easily)
+Improve maintainability and solid architecture
+Follow SOLID “D”: Dependency Inversion Principle
+
+
+
+✅ 3️⃣ Constructor Injection Benefit?
+✔ Tumhara answer:
+Loose coupling
+Correct but incomplete.
+⭐ PROFESSIONAL COMPLETE ANSWER:
+Constructor Injection gives:
+Strong immutability → dependency set only once
+Null safety → compiler ensures dependency provided
+Testability → easy to inject mocks
+Loose coupling → depends on interface, not concrete class
+No hidden dependencies
+This is why constructor injection is preferred over property or method injection.
+
+✅ 4️⃣ Loose Coupling kya hota?
+✔ Tumhara answer:
+one class should not directly depend on other
+Excellent.
+⭐ PROFESSIONAL VERSION:
+Loose coupling means:
+A class depends on abstractions (interfaces) instead of concrete classes
+You can replace implementations without modifying the main code
+Improves flexibility, testability, and scalability
+Example:
+❌ Tight coupling:
+var s = new SmsNotification();
+✔ Loose coupling:
+INotificationService s = new SmsNotification();
