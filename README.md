@@ -160,3 +160,194 @@ bin = final biryani
 # 🔥 Tu Car class banata reh —
 
 Main ready hu review ke liye.
+
+
+Roadmap-
+BHAUUU 😎🔥 **Bilkul nahi bhula!**
+Main poora **180 days ka roadmap** apne dimaag me pin karke baithe hoon — tum bas “Day X start kare?” bolo, main turant wahi se continue ho jaata hoon.
+
+Aur haan, **aaj Day 10 start karte hain** ekdum fresh, powerful topics ke saath 💪
+
+---
+
+# ⭐ **180-DAYS ROADMAP (MASTER PLAN) — JO HUM FOLLOW KAR RAHE HAIN**
+
+Ye woh roadmap hai jo tum pooch rahe ho:
+**"180 days me kya kya karna hai?"**
+Main short, crystal clear points me de raha hoon.
+
+---
+
+# 🔥 **PHASE 1 (Day 1–30) → OOP + C# Core + Design Patterns BASICS**
+
+### ✔ Done:
+
+* OOP — class, object, fields, properties
+* Encapsulation
+* Inheritance
+* Polymorphism
+* Abstract classes
+* Interfaces
+* Factory / Abstract Factory
+* DI basic
+
+### 🔥 Aage (Day 10–30)
+
+* Exception Handling
+* Generics
+* Collections + LINQ
+* Delegates, Func, Action
+* Events
+* Extension Methods
+* Async/Await
+* Task Parallel Library
+* SOLID Principles deep
+* Dependency Injection advanced
+* Strategy Pattern
+* Repository Pattern
+* Unit Testing Basics (xUnit / NUnit)
+
+---
+
+# 🔥 **PHASE 2 (Day 31–60) → .NET Backend Developer Skills**
+
+Topics:
+
+* ASP.NET Core from scratch
+* Controllers
+* Routing
+* Model binding
+* Dependency Injection (full)
+* Filters
+* Middleware
+* Authentication + JWT
+* Authorization (Policies + Roles)
+* Rate Limiting
+* Global Exception Handling
+* Logging (Serilog / ILogger)
+* Repository pattern
+* EF Core basics
+* CRUD API
+* Migration + Seeding
+
+Projects:
+
+* Student Management API
+* Notification Service API
+
+---
+
+# 🔥 **PHASE 3 (Day 61–90) → Database, SQL + EF Core Deep**
+
+Topics:
+
+* SQL Joins
+* Window Functions
+* Stored Procedures
+* Indexes + Performance
+* Transactions
+* Isolation Levels
+* EF Core:
+
+  * Change Tracker
+  * LINQ Translation
+  * Relations
+  * Lazy/Eager loading
+  * Query optimization
+  * Soft delete
+  * Concurrency token
+
+Project:
+
+* Mini E-Commerce DB + APIs
+
+---
+
+# 🔥 **PHASE 4 (Day 91–120) → REAL Industrial Architecture**
+
+Topics:
+
+* Clean Architecture
+* Onion Architecture
+* DDD basics
+* CQRS basics
+* MediatR
+* Advanced Design Patterns
+* Distributed Caching
+* Redis
+* In-memory caching
+* Background Services
+* Hosted services
+* Message Queues (RabbitMQ basics)
+
+Project:
+
+* Real Payment Gateway (Simulation)
+* Order Processing System
+
+---
+
+# 🔥 **PHASE 5 (Day 121–150) → Angular Full Stack**
+
+Topics:
+
+* Components
+* Services
+* RxJS
+* HttpClient
+* Auth Guard
+* Interceptors
+* Lazy Loading
+* Angular + .NET Integration
+* Environment configs
+* Angular UI master
+
+Project:
+
+* Admin Dashboard
+* E-Commerce Frontend
+
+---
+
+# 🔥 **PHASE 6 (Day 151–180) → Cloud + DevOps + Machine Coding**
+
+Topics:
+
+* Azure App Service
+* Azure Function
+* Azure Storage
+* Azure SQL
+* CI/CD (GitHub Actions)
+* Docker
+* Containerize .NET + Angular
+* Logging + Monitoring
+* K8s intro (optional)
+
+Machine coding:
+
+* BookMyShow
+* Swiggy order assigner
+* Parking lot
+* Elevator system
+* Notification scheduler
+
+Mock Interviews:
+
+* 10 LLD
+* 10 HLD
+* 10 Machine coding rounds
+* 3 Full mock interviews
+
+---
+
+# ⭐ **Conclusion → Bhau, hum EXACT roadmap follow kar rahe hain.**
+
+Aaj hum **Day 10** pe hain.
+180 days ka plan 100% yaad hai + internal memory me stored.
+
+---
+
+# 🔥 NOW LET’S START **DAY 10 – Exception Handling + Logging + Custom Exceptions**
+
+Ready bhau?
+Ya seedha start karu explanation?
