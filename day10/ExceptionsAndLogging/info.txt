@@ -1,0 +1,132 @@
+⭐ DAY 10 SHORT QUESTIONS (Answer These After Task)
+
+1️⃣ throw vs throw ex difference?
+2️⃣ Why custom exceptions?
+3️⃣ What is finally used for?
+4️⃣ Why should we avoid empty catch?
+5️⃣ What is global exception handler?
+
+⭐ Day 10 – 5 Short Questions (Final Interview-Ready Answers)
+1️⃣ throw vs throw ex?
+
+throw;
+
+Same exception ko wapas upar bhej deta hai
+
+Original stack trace preserve karta hai ✅ (pata chalta hai error kahaan se aaya)
+
+throw ex;
+
+Naya throw point maan leta hai
+
+Original stack trace ka source chhup jata hai ❌
+
+👉 Best practice:
+throw; use karo jab catch ke andar sirf log karke upar rethrow karna ho.
+
+2️⃣ Custom exceptions kyu banate hain?
+
+Domain meaning clear karne ke liye
+
+InsufficientFundsException, InvalidOrderStateException, UserNotFoundException
+
+Specific error ko alagd se catch kar sakte ho
+
+Logging & debugging easy ho jata hai
+
+API / UI ko meaningful error message de sakte ho
+
+👉 Short line:
+Custom exceptions = business level errors ko clearly represent karne ka tarika.
+
+3️⃣ finally block ka use?
+
+Jo bhi ho, ye hamesha chalega:
+
+Exception aaye ya na aaye
+
+return ho ya na ho
+
+Use hota hai:
+
+DB connection close karne ke liye
+
+File close karne ke liye
+
+Streams dispose karne ke liye
+
+Cleanup work ke liye
+
+👉 Short line:
+finally = “cleanup yahan hamesha hoga.”
+
+4️⃣ Empty catch { } avoid kyu karte hain?
+
+Exception chup ho jata hai, log bhi nahi hota
+
+Baad me bug dhundhna impossible ho jata
+
+App weird state me aa sakti hai (data corrupt, silent failures)
+
+Production me “kuch to galat hai, pata nahi kya” type situation aa jati hai
+
+👉 Best practice:
+
+At least log karo ya
+
+Meaningful handling karo
+
+Nahi samajh aa raha to throw; se rethrow karo
+
+Empty catch = “maar ke chhup jana” — bilkul avoid karna.
+
+5️⃣ Global Exception Handler kya hai?
+
+Ek central jagah jahan pe saare unhandled exceptions catch hote hain
+
+Mostly:
+
+ASP.NET Core me Middleware / UseExceptionHandler
+
+Controllers me ExceptionFilter
+
+Ye karta kya hai?
+
+Exception log karta hai
+
+User ko standard error response deta hai (like generic 500 JSON)
+
+Har jagah try–catch likhne ki zaroorat kam ho jaati hai
+
+👉 Short line:
+Global Exception Handler = “app ka main safety net, jo saare unhandled exceptions ko pakadta hai.”
+
+🔥 Day 11 – Ab kya karna hai?
+
+Day 11 ke liye hum C# Generics + Collections start karenge, kyunki:
+
+Real projects me List, Dictionary, HashSet, Queue, Stack roz use hota hai
+
+Generics samjhe bina Repository, Service layers, Clean Architecture ka maza nahi aayega
+
+🧠 Day 11 Topics (Concept only, code tu likhega)
+
+Generics:
+
+List<T>, Dictionary<TKey, TValue> ka idea
+
+Apna khud ka Repository<T> banana
+
+Collections:
+
+List<T> vs Array
+
+Dictionary use kab?
+
+HashSet use kab?
+
+Real-world mini-design:
+
+In-memory IRepository<T> banayenge
+
+Use with Employee and Product
