@@ -1,0 +1,156 @@
+BHAU 🔥🔥🔥
+Ekdum **complete LIST** de deta hoon jo tum **Employee + Department** data pe
+**Easy → Medium → Complex** LINQ queries likh sakte ho.
+
+Ye EXACT wahi queries hain jo:
+
+* Interviews me aati hain
+* Real projects me use hoti hain
+* Coding rounds me milti hain
+* Machine coding + SQL mapping me help karti hain
+
+Tum inko solve kar loge → LINQ MASTER 🌟 ban jaoge.
+
+---
+
+# ⭐ **EASY LEVEL (10 Queries)**
+
+Basic filtering, sorting, selecting.
+
+1️⃣ Select all employees
+2️⃣ Select all employee names only
+3️⃣ Employees with salary > 50,000
+4️⃣ Employees whose name starts with "A"
+5️⃣ Sort employees by name ascending
+6️⃣ Sort employees by salary descending
+7️⃣ Find employee with Id = 5
+8️⃣ Count employees in IT department
+9️⃣ Check if any employee earns more than 1,00,000
+🔟 Find minimum & maximum salary
+
+---
+
+# ⭐ **MEDIUM LEVEL (15 Queries)**
+
+Grouping, joining, projections.
+
+1️⃣ **Join employees with departments** → get Name + DepartmentName
+2️⃣ Group employees by DepartmentId
+3️⃣ Department-wise employee count
+4️⃣ Department-wise total salary
+5️⃣ Department-wise average salary
+6️⃣ Employees grouped by first letter of name
+7️⃣ Get top 3 highest salary employees
+8️⃣ Get distinct department IDs from employees
+9️⃣ Find employees whose name contains "sh" (case-insensitive)
+🔟 Find all employees not in IT department
+1️⃣1️⃣ Employees whose salary is between 40k and 70k
+1️⃣2️⃣ Convert employee list to dictionary (Id → Name)
+1️⃣3️⃣ Find employees with salary less than average salary
+1️⃣4️⃣ Check if all employees have salary > 20k
+1️⃣5️⃣ Project to new anonymous object: Name, Salary, DeptName
+
+---
+
+# ⭐ **COMPLEX LEVEL (15 Queries)**
+
+Nested LINQ, group join, multi-level sorting, aggregate analytics.
+
+1️⃣ **Left Join** Employee + Department (show employees even if department missing)
+2️⃣ GroupJoin → Department + List of its Employees
+3️⃣ Find **highest salary per department**
+4️⃣ Find **second highest** salary overall
+5️⃣ Find **second highest** salary per department
+6️⃣ Find department with **highest average salary**
+7️⃣ Find department with **maximum number of employees**
+8️⃣ Identify employees who earn **more than their department average salary**
+9️⃣ Salary bucket report (10k–20k, 20k–30k, …)
+🔟 Find total salary expense per department sorted descending
+1️⃣1️⃣ Build a class `EmployeeWithDepartment` and project into it using join
+1️⃣2️⃣ Count employees whose name letters > 5
+1️⃣3️⃣ Multi-level sorting: Salary desc, then Name asc
+1️⃣4️⃣ Find top 2 earners FROM EACH department
+1️⃣5️⃣ Convert entire result into JSON (using System.Text.Json)
+
+---
+
+# ⭐ BONUS (for Machine Coding)
+
+These give you REAL EXPERIENCE:
+
+### 🎯 **Complex Query Sets**
+
+#### 1️⃣ Employees with department name "IT", salary > 50k, sorted descending
+
+#### 2️⃣ Employees grouped by department → ordered by average salary
+
+#### 3️⃣ Create employee summary model:
+
+```csharp
+{
+   FullName,
+   Salary,
+   Department,
+   SalaryRank,
+   IsHighEarner
+}
+```
+
+#### 4️⃣ Find the longest employee name
+
+#### 5️⃣ Find the most common letter in employee names
+
+---
+
+# ⭐ CHALLENGE MODE (If you want to be unstoppable)
+
+3 Hard Problems:
+
+### 🔥 Problem 1: Department leaderboard
+
+Show:
+
+* DeptName
+* TotalSalary
+* AvgSalary
+* EmployeeCount
+  Sorted by **TotalSalary DESC**.
+
+### 🔥 Problem 2: Employee raise simulation
+
+Give:
+
+* 10% raise to salary < 40,000
+* 5% raise to salary between 40–60k
+* No raise if > 60k
+
+Return updated list.
+
+### 🔥 Problem 3: Group employees by salary slabs
+
+```
+<30k  
+30k–50k  
+50k–80k  
+>80k
+```
+
+Count how many employees fall in each bucket.
+
+---
+
+# ⭐ Bhau, ab TERE KO KARNA HAI:
+
+Bol:
+
+### ✔ "Easy se start kare bhau"
+
+ya
+
+### ✔ "Medium level se start kara"
+
+ya
+
+### ✔ "Direct complex hard wale kara"
+
+Kaunse level se solve karna chahte ho? 🔥
