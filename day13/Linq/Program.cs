@@ -135,7 +135,9 @@ var topThreeSalary = employees.OrderByDescending(emp => emp.Salary).Take(3).ToLi
 var distinctEmpIds = employees.Select(emp => emp.DepartmentId).Distinct().ToList();
 
 // 9️⃣ Find employees whose name contains "sh" (case-insensitive)
-var shNamedEmployee = employees.Where(emp => emp.Name.IndexOf("sh", StringComparison.OrdinalIgnoreCase >= 0)).ToList();
+var shNamedEmployee = employees
+    .Where(emp => emp.Name.IndexOf("sh", StringComparison.OrdinalIgnoreCase) >= 0)
+    .ToList();
 
 // 🔟 Find all employees not in IT department
 var employeeInIT = employees.Where(emp => emp.DepartmentId != itId).ToList();
@@ -148,7 +150,7 @@ var empDict = employees.ToDictionary(e => e.Id, e => e.Name);  // throws if dupl
 
 
 // 1️⃣3️⃣ Find employees with salary less than average salary
-decimal avgSalary = employees.Average(emp => emp.Salary);
+double avgSalary = employees.Average(emp => emp.Salary);
 var lessIncomeEmp = employees.Where(emp => emp.Salary < avgSalary).ToList();
 
 // 1️⃣4️⃣ Check if all employees have salary > 20k
@@ -161,3 +163,24 @@ var nameSalaryDept = employees.Join(
     dept => dept.Id,
     (emp, dept) => new { emp.Name, emp.Salary, Department = dept.Name }
 ).ToList();
+
+
+// # ⭐ **COMPLEX LEVEL (15 Queries)**
+
+// Nested LINQ, group join, multi-level sorting, aggregate analytics.
+
+// 1️⃣ **Left Join** Employee + Department (show employees even if department missing)
+// 2️⃣ GroupJoin → Department + List of its Employees
+// 3️⃣ Find **highest salary per department**
+// 4️⃣ Find **second highest** salary overall
+// 5️⃣ Find **second highest** salary per department
+// 6️⃣ Find department with **highest average salary**
+// 7️⃣ Find department with **maximum number of employees**
+// 8️⃣ Identify employees who earn **more than their department average salary**
+// 9️⃣ Salary bucket report (10k–20k, 20k–30k, …)
+// 🔟 Find total salary expense per department sorted descending
+// 1️⃣1️⃣ Build a class `EmployeeWithDepartment` and project into it using join
+// 1️⃣2️⃣ Count employees whose name letters > 5
+// 1️⃣3️⃣ Multi-level sorting: Salary desc, then Name asc
+// 1️⃣4️⃣ Find top 2 earners FROM EACH department
+// 1️⃣5️⃣ Convert entire result into JSON (using System.Text.Json)

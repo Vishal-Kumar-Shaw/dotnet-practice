@@ -1,0 +1,133 @@
+⭐ 12.1 — WHAT IS A DELEGATE? (SUPER IMPORTANT)
+
+Delegate =
+👉 A variable that can hold a method
+👉 “Method ko parameter ki tarah pass karna”
+👉 “Methods as first-class citizens”
+
+Example (theory explanation):
+public delegate void MyDelegate(string message);
+
+
+Usage:
+
+void PrintName(string msg) { }
+MyDelegate d = PrintName;
+d("hello");
+
+REAL USE CASE:
+
+Callback
+
+Plugin architecture
+
+Strategy pattern
+
+Logging hooks
+
+LINQ internally delegates use karta hai
+
+⭐ 12.2 — TYPES OF DELEGATES
+1️⃣ Normal Delegate
+
+Custom declared.
+
+2️⃣ Func<>
+
+Returns value.
+
+Func<int, int, int> add = (a,b) => a+b;
+
+3️⃣ Action<>
+
+No return value.
+
+Action<string> log = m => Console.WriteLine(m);
+
+4️⃣ Predicate<>
+
+Returns bool only
+Used for conditions.
+
+Predicate<int> isEven = n => n % 2 == 0;
+
+
+Industry me hum mostly Func + Action + Predicate hi use karte hain.
+
+⭐ 12.3 — EVENTS (Real Pub/Sub System)
+
+Event =
+👉 “Something happened → notify subscriber”
+
+Example flow:
+
+Button clicked → event fire
+
+Stock quantity drops → event fire
+
+Payment successful → event fire
+
+User logged in → event fire
+
+Publisher/Subscribers Model
+public delegate void NotifyHandler(string msg);
+public event NotifyHandler LowStock;
+
+
+Firing:
+
+LowStock?.Invoke("Stock is low!");
+
+
+Subscribing:
+
+stock.LowStock += HandlerMethod;
+
+⭐ DAY 12 — TASK (NO CODE FROM ME, ONLY GUIDANCE)
+
+Build a Stock Monitoring System:
+
+👉 Step 1: Create delegate
+public delegate void StockEventHandler(string message);
+
+👉 Step 2: Create StockItem class
+
+Properties:
+
+int Id
+
+string Name
+
+int Quantity
+
+Event:
+
+StockLow event
+
+Fire when quantity < 5
+
+👉 Step 3: WarehouseService
+
+Subscribe to StockLow
+
+Print alert message
+
+👉 Step 4: In Main()
+
+Create 2 items
+
+Reduce quantity
+
+Trigger event
+
+WarehouseService prints alert
+
+⭐ EXTRA TASK (PRO LEVEL)
+
+Use Func, Action, Predicate:
+
+Predicate → Check if item is low
+
+Action → Print summary
+
+Func → Return discount %
