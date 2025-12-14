@@ -11,10 +11,23 @@ public class UserController: ControllerBase
         _userService = userService;
     }
 
-    [HttpGet]
+    [HttpGet("test")]
+    public IActionResult Test()
+    {
+        return Ok("API is working");
+    }
+
+    [HttpGet("users")]
     public async Task<IActionResult> GetUsers()
     {
         var users = await _userService.GetUsersAsync();
         return Ok(users);
     }
+    [HttpGet("users-sync")]
+    public IActionResult GetUsersAsync()
+    {
+        Thread.Sleep(3000);
+        return Ok("Sync Users");
+
+    } 
 }

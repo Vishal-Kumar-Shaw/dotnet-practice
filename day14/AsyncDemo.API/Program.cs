@@ -2,6 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // 👇 THIS IS REQUIRED
 builder.Services.AddControllers();
+builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
