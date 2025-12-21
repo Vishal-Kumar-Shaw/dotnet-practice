@@ -7,6 +7,7 @@ public class EmployeeService: IEmployeeService
     }
     public async Task<List<Employee>> GetAllEmployeeAsync()
     {
+        Console.WriteLine("Request received in Service");
         return await _employeeRepository.GetAllEmployeeAsync();
     }
     public async Task<Employee?> GetEmployeeByIdAsync(int id)

@@ -9,12 +9,20 @@ public class EmployeeController: ControllerBase
     {
         _service = service;
     }
+    // [HttpGet]
+    // public async Task<IActionResult> GetAllEmployeeAsync()
+    // {
+    //     Console.WriteLine("Request Received");
+    //     var employees = _service.GetAllEmployeeAsync();
+    //     return Ok(employees);
+    // }
     [HttpGet]
-    public async Task<IActionResult> GetAllEmployeeAsync()
+    public async Task<IActionResult> GetAll()
     {
-        var employees = _service.GetAllEmployeeAsync();
+        var employees = await _service.GetAllEmployeeAsync();
         return Ok(employees);
     }
+
     [HttpGet("{id}")]
     public async Task<IActionResult> GetEmployeeById(int id)
     {

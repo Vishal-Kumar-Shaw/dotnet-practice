@@ -1,6 +1,8 @@
+using System.Text.Json;
+
 public class EmployeeRepository: IEmployeeRepository
 {
-    private readonly List<Employee> _employees = new()
+    private readonly List<Employee> _employees = new List<Employee>()
     {
         new Employee{Id = 1, Name = "Vishal", Salary = 60000, Department = "IT"},
         new Employee{Id=2, Name="Rahul", Salary=70000, Department="HR"}
