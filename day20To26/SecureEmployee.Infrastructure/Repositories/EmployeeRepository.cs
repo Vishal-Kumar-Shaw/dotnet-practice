@@ -3,6 +3,7 @@ using SecureEmployee.Application.Interfaces;
 using SecureEmployee.Domain.Entities;
 using SecureEmployee.Infrastructure.Data;
 
+namespace SecureEmployee.Infrastructure.Repositories;
 public class EmployeeRepository : IEmployeeRepository
 {
     private readonly AppDbContext _db;
@@ -13,11 +14,14 @@ public class EmployeeRepository : IEmployeeRepository
     public async Task AddAsync(Employee employee)
     {
         await _db.Employees.AddAsync(employee);
+        await _db.SaveChangesAsync();
     }
 
-    public Task DeleteAsync(int id)
+    public async Task DeleteAsync(int id)
     {
-        throw new NotImplementedException();
+        var employee = await GetByIdAsync(id);
+        _db.Employees.Remove(employee);
+        await _db.SaveChangesAsync();
     }
 
     public async Task<IEnumerable<Employee>> GetAllAsync()

@@ -1,5 +1,5 @@
 using SecureEmployee.Domain.Entities;
-
+namespace SecureEmployee.Application.Interfaces;
 public interface IEmployeeService
 {
     Task<List<Employee>> GetAllAsync();
