@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using SecureEmployee.Application.Interfaces;
 using SecureEmployee.Domain.Entities;
-[ApiController]
+using Microsoft.AspNetCore.Authorization;
+
+[Authorize(Roles = "GlobalAdmin")]
+[ApiController] 
 [Route("api/employees")]
 
 public class EmployeeController : ControllerBase

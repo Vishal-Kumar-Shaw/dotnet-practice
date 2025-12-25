@@ -1,6 +1,7 @@
 using SecureEmployee.Application.Interfaces;
 using SecureEmployee.Domain.Entities;
 
+namespace SecureEmployee.Application.Services;
 public class EmployeeService : IEmployeeService
 {
     private readonly IEmployeeRepository _repo;
