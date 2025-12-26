@@ -1,13 +1,16 @@
 using SecureEmployee.Application.Interfaces;
 using SecureEmployee.Domain.Entities;
+using SecureEmployee.Application.Common.Interfaces;
 
 namespace SecureEmployee.Application.Services;
 public class EmployeeService : IEmployeeService
 {
     private readonly IEmployeeRepository _repo;
-    public EmployeeService(IEmployeeRepository repo)
+    private readonly ICurrentUserService _currentUserService;
+    public EmployeeService(IEmployeeRepository repo, ICurrentUserService currentUserService)
     {
         _repo = repo;
+        _currentUserService = currentUserService;
     }
     public async Task AddAsync(Employee employee)
     {
@@ -21,6 +24,7 @@ public class EmployeeService : IEmployeeService
 
     public async Task<List<Employee>> GetAllAsync()
     {
+        Console.WriteLine($"User {_currentUserService.Email} with role {_currentUserService.Role} accessed employees");
         var employees = await _repo.GetAllAsync();
         return employees.ToList();
     }
