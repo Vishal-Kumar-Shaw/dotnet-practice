@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using SecureEmployee.Application.Interfaces;
 using SecureEmployee.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
+using SecureEmployee.Application.Common.Interfaces;
 
 [ApiController] 
 [Route("api/employees")]
@@ -38,4 +39,17 @@ public class EmployeeController : ControllerBase
         await _employeeService.DeleteAsync(id);
         return Ok();
     }
+    [Authorize]
+    [HttpGet("me")]
+    public IActionResult Me([FromServices] ICurrentUserService currentUser)
+    {
+        return Ok(new
+        {
+            currentUser.IsAuthenticated,
+            currentUser.UserId,
+            currentUser.Email,
+            currentUser.Role
+        });
+    }
+
 }
