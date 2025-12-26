@@ -17,5 +17,10 @@ public class AuthController : ControllerBase
         var token = await _authService.AuthenticateAsync(request.Email, request.Password);
         return Ok(new { Token = token });
     }
-
+    [HttpPost("register")]
+    public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+    {
+        await _authService.RegisterAsync(request);
+        return Ok(new { Message = "User registered successfully" });
+    }
 }

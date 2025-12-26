@@ -3,7 +3,6 @@ using SecureEmployee.Application.Interfaces;
 using SecureEmployee.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 
-[Authorize(Roles = "GlobalAdmin")]
 [ApiController] 
 [Route("api/employees")]
 
@@ -14,6 +13,7 @@ public class EmployeeController : ControllerBase
     {
         _employeeService = employeeService;
     }
+    [Authorize(Roles = "Employee, GlobalAdmin")]
     [HttpGet]
     public async Task<IActionResult> GetAllEmployees()
     {
