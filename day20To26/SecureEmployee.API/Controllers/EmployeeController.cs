@@ -14,25 +14,28 @@ public class EmployeeController : ControllerBase
     {
         _employeeService = employeeService;
     }
-    [Authorize(Roles = "Employee, GlobalAdmin")]
+    [Authorize(Roles = "GlobalAdmin")]
     [HttpGet]
     public async Task<IActionResult> GetAllEmployees()
     {
         var employees = await _employeeService.GetAllAsync();
         return Ok(employees);
     }
+    [Authorize]
     [HttpGet("{id}")]
     public async Task<IActionResult> GetEmployeeById(int id)
     {
         var employee = await _employeeService.GetByIdAsync(id);
         return Ok(employee);
     }
+    [Authorize(Roles = "GlobalAdmin")]
     [HttpPost]
     public async Task<IActionResult> AddEmployee(Employee employee)
     {
         await _employeeService.AddAsync(employee);
         return Ok(employee);
     }
+    [Authorize(Roles = "GlobalAdmin")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteEmployee(int id)
     {

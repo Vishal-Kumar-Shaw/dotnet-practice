@@ -2,7 +2,8 @@ namespace SecureEmployee.Domain.Entities;
 public class Employee
 {
     public int Id {get; set;}
-    public string Name {get; set;}
+    public Guid UserId { get; set; }
+    public string Name {get; set;} = string.Empty;
     public decimal Salary {get; set;}
-    public string Department {get; set;}
+    public string Department {get; set;} = string.Empty;
 }

@@ -31,6 +31,17 @@ public class EmployeeService : IEmployeeService
 
     public async Task<Employee> GetByIdAsync(int id)
     {
-        return await _repo.GetByIdAsync(id);
+        
+        var emp = await _repo.GetByIdAsync(id);
+        if(emp == null)
+        {
+            throw new Exception("Employee not found");
+        }
+        // owner check
+        if(_currentUserService.Role != "GlobalAdmin" && emp.UserId != _currentUserService.UserId)
+        {
+            throw new Exception("Access denied");
+        }
+        return emp;
     }
 }
