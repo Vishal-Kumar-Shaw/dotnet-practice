@@ -31,7 +31,6 @@ public class EmployeeRepository : IEmployeeRepository
 
     public async Task<Employee> GetByIdAsync(int id)
     {
-        return await _db.Employees.FirstOrDefaultAsync(e => e.Id == id) 
-               ?? throw new InvalidOperationException($"Employee with ID {id} not found.");
+        return await _db.Employees.FirstOrDefaultAsync(e => e.Id == id);
     }
 }

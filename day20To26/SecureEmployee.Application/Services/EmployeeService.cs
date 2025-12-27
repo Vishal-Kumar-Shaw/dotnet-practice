@@ -1,6 +1,7 @@
 using SecureEmployee.Application.Interfaces;
 using SecureEmployee.Domain.Entities;
 using SecureEmployee.Application.Common.Interfaces;
+using SecureEmployee.Application.Common.Exceptions;
 
 namespace SecureEmployee.Application.Services;
 public class EmployeeService : IEmployeeService

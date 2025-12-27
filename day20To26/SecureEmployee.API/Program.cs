@@ -11,7 +11,6 @@ using SecureEmployee.Application;
 using SecureEmployee.Application.Common.Interfaces;
 
 
-
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(
@@ -47,6 +46,7 @@ builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
 builder.Services.AddControllers();
 var app = builder.Build();
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 
