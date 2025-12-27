@@ -35,12 +35,12 @@ public class EmployeeService : IEmployeeService
         var emp = await _repo.GetByIdAsync(id);
         if(emp == null)
         {
-            throw new Exception("Employee not found");
+            throw new NotFoundException("Employee not found");
         }
         // owner check
         if(_currentUserService.Role != "GlobalAdmin" && emp.UserId != _currentUserService.UserId)
         {
-            throw new Exception("Access denied");
+            throw new ForbiddenException("You do not have access to this employee");
         }
         return emp;
     }
