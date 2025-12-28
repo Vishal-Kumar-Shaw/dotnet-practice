@@ -1,3 +1,4 @@
+namespace SecureEmployee.Application.DTOs;
 public class RegisterRequest
 {
     public string Email { get; set; } = null;

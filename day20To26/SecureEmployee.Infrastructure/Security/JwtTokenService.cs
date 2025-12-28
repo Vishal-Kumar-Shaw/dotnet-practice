@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
+using System.Security.Cryptography;
+
 namespace SecureEmployee.Infrastructure.Security;
 public class JwtTokenService : IJwtTokenService
 {
@@ -27,7 +29,7 @@ public class JwtTokenService : IJwtTokenService
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(claims),
-            Expires = DateTime.UtcNow.AddHours(1),
+            Expires = DateTime.UtcNow.AddMinutes(2), // 2 for testing purposes
             Issuer = _configuration["Jwt:Issuer"],
             Audience = _configuration["Jwt:Audience"],
             SigningCredentials = new SigningCredentials(
@@ -40,5 +42,9 @@ public class JwtTokenService : IJwtTokenService
         var token = tokenHandler.CreateToken(tokenDescriptor);
 
         return tokenHandler.WriteToken(token);
+    }
+    public string GenerateRefreshToken()
+    {
+        return Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
     }
 }

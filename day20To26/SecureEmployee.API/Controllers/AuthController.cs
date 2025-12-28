@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SecureEmployee.Application.Interfaces;
+namespace SecureEmployee.Application.DTOs;
 
 [ApiController]
 [Route("api/auth")]
@@ -22,5 +23,12 @@ public class AuthController : ControllerBase
     {
         await _authService.RegisterAsync(request);
         return Ok(new { Message = "User registered successfully" });
+    }
+    [HttpPost("refresh-token")]
+    public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenRequest request)
+    {
+        // Implementation for token refresh
+        var result = await _authService.RefreshTokenAsync(request.RefreshToken);
+        return Ok(result);
     }
 }
