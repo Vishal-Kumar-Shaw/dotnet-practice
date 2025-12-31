@@ -9,5 +9,6 @@ public interface ICurrentUserService
    public string Email { get; }
    public string Role { get; }
    public bool IsAuthenticated { get; }
+   public DTOs.UserProfileDTO GetProfile();
 
 }
