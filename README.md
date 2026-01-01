@@ -351,3 +351,5 @@ Aaj hum **Day 10** pe hain.
 
 Ready bhau?
 Ya seedha start karu explanation?
+
+Day 1 to 30 Is dotnet
