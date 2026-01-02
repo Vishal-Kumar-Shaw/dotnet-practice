@@ -1,0 +1,17 @@
+<h1>Hello World</h1>
+
+<!-- This is Interpolation -->
+<h2> Hii Everyone! My name is {{ name }}. </h2>
+
+<!-- This is property binding -->
+<button [disabled]="isDisabled">Click me</button>
+
+<!-- This is event binding -->
+<p>{{ value}}</p>
+<button (click)="increament()">+</button>
+<button (click)="decreament()">-</button>
+
+<!-- This is two way binding -->
+ <br/>
+ <input type="text" [(ngModel)]="inputVal"/>
+ <p>{{inputVal}}</p>
