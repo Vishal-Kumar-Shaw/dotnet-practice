@@ -81,3 +81,6 @@ Properties/PublishProfiles/
 
 # Others
 *.config.lock
+
+.angular/
+.next/
