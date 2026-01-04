@@ -31,3 +31,7 @@
     <div *ngSwitchCase="2">Two</div>
     <div *ngSwitchDefault>More Than two</div>
  </div>
+
+ <!-- Add User -->
+  <input type="text" [(ngModel)]="userName">
+  <button (click)="addUser()">Add User</button>
