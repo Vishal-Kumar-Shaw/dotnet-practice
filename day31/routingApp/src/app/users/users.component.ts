@@ -9,10 +9,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './users.component.css',
 })
 export class UsersComponent {
-  users:string[]=[];
+  users:any[]=[];
+  users2:any[]=[];
 
   constructor(private userService: UserService){}
   ngOnInit(){
-    this.users = this.userService.getUsers();
+    this.userService.getUsers2().subscribe({
+      next: (data) => this.users2 = data,
+      error: (err) => console.error(err)
+    });
   }
 }
