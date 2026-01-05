@@ -1,5 +1,5 @@
 <p>users works!</p>
 <div *ngFor="let user of users2">
-    <p>{{user.name}}</p>
+    <a [routerLink]="['/users', user.id]">{{user.name}}</a>
     <p>{{user.email}}</p>
 </div>
