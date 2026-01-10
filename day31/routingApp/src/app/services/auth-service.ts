@@ -4,8 +4,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
+  LoggedIn: boolean = false;
+
   IsLoggedIn():boolean{
-    return true;
+    return this.LoggedIn;
+  }
+
+  login(){
+    this.LoggedIn = true;
+  }
+  
+  logout(){
+    this.LoggedIn = false;
   }
 
 }
