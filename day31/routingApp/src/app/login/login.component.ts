@@ -11,22 +11,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private authservice:AuthService, private router: Router){
-    console.log("Login comp")
-  }
+  constructor(
+    private authservice: AuthService,
+    private router: Router
+  ) {}
+
   get isLoggedIn() {
     return this.authservice.IsLoggedIn();
   }
 
-  authenticate(){
-    console.log("Login clicked");
-    if(this.isLoggedIn){
+  authenticate() {
+    if (this.isLoggedIn) {
       this.authservice.logout();
       this.router.navigate(['/login']);
-    }
-    else {
+    } else {
       this.authservice.login();
       this.router.navigate(['/home']);
     }
   }
-} 
+}
+
