@@ -11,23 +11,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(
-    private authservice: AuthService,
-    private router: Router
-  ) {}
-
-  get isLoggedIn() {
-    return this.authservice.IsLoggedIn();
-  }
-
-  authenticate() {
-    if (this.isLoggedIn) {
-      this.authservice.logout();
-      this.router.navigate(['/login']);
-    } else {
-      this.authservice.login();
-      this.router.navigate(['/home']);
-    }
-  }
+ 
 }
 

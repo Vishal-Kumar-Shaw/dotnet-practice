@@ -2,5 +2,6 @@
   <a routerLink="/home">Home</a>
   <a routerLink="/users">Users</a>
 </div>
+<button (click)="authenticate()">{{this.isLoggedIn ? 'logout' : 'login'}}</button>
 
 <router-outlet></router-outlet>
